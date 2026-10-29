@@ -22,4 +22,4 @@ export function Head({ title, lede, children }) {
 
 export const PROCS = ['MAG acier', 'MIG pulsé acier', 'MIG pulsé alu', 'Double pulsé alu', 'Électrode', 'TIG acier']
 
-export const APP_VERSION = '1.0.0'
+export const APP_VERSION = '1.0.1'

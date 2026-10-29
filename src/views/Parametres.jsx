@@ -1,11 +1,20 @@
 import { useRef, useState } from 'react'
 import { DEFAULT_MODEL, backupJson, download, parseBackup, today } from '../store.js'
+import { testGroqConnection } from '../ai.js'
 import { APP_VERSION, Head } from './common.jsx'
 
 export default function Parametres({ state, update }) {
   const [show, setShow] = useState(false)
   const [msg, setMsg] = useState('')
   const [armed, setArmed] = useState(false)
+  const [test, setTest] = useState(null)
+  const [testing, setTesting] = useState(false)
+  const runTest = async () => {
+    setTesting(true)
+    setTest({ ok: null, message: 'Test en cours…' })
+    setTest(await testGroqConnection(s.groqKey, s.groqModel))
+    setTesting(false)
+  }
   const fileRef = useRef(null)
   const s = state.settings
   const setSetting = (k, v) => update((st) => ({ ...st, settings: { ...st.settings, [k]: v } }))
@@ -69,12 +78,30 @@ export default function Parametres({ state, update }) {
         <button className="btn ghost" type="button" onClick={() => setShow(!show)}>
           {show ? 'Masquer la clé' : 'Afficher la clé'}
         </button>
+        <button className="btn" type="button" disabled={!s.groqKey || testing} onClick={runTest}>
+          {testing ? 'Test…' : 'Tester la connexion'}
+        </button>
         {s.groqModel !== DEFAULT_MODEL && (
           <button className="btn ghost" type="button" onClick={() => setSetting('groqModel', DEFAULT_MODEL)}>
             Revenir à {DEFAULT_MODEL}
           </button>
         )}
       </div>
+      {test && <div className={test.ok === true ? 'tip' : test.ok === false ? 'warn' : 'status'}>{test.message}</div>}
+      {test?.keyOk && !test.ok && test.models?.length > 0 && (
+        <div className="chips">
+          {test.models
+            .filter((id) => !/whisper|tts|guard|orpheus|distil/i.test(id))
+            .map((id) => (
+              <button key={id} type="button" className="chip" onClick={() => setSetting('groqModel', id)}>
+                {id}
+              </button>
+            ))}
+        </div>
+      )}
+      <p className="status">
+        Clé non partagée avec tes autres applis : chaque appli garde la sienne dans le téléphone, colle-la ici aussi.
+      </p>
       <p className="status">
         Modèle par défaut : {DEFAULT_MODEL}, qui accepte les images selon la documentation Groq (octobre 2026). S'il disparaît, remplace-le par un autre
         modèle « vision » listé sur console.groq.com/docs/vision.

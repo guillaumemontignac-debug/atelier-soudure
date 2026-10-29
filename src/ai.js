@@ -75,6 +75,7 @@ export async function analyzeWeld({ key, model, imageDataUrl, ctx, signal }) {
       body: JSON.stringify({
         model,
         temperature: 0.3,
+        max_completion_tokens: 4096,
         response_format: { type: 'json_object' },
         messages: [
           {
@@ -105,4 +106,28 @@ export async function analyzeWeld({ key, model, imageDataUrl, ctx, signal }) {
   }
   const json = await res.json()
   return parseAnswer(json?.choices?.[0]?.message?.content)
+}
+
+// Vérifie la clé et la présence du modèle, sans consommer de quota de génération.
+export async function testGroqConnection(key, model) {
+  if (!key) return { ok: false, message: 'Aucune clé enregistrée.' }
+  let res
+  try {
+    res = await fetch('https://api.groq.com/openai/v1/models', { headers: { Authorization: `Bearer ${key}` } })
+  } catch {
+    return { ok: false, message: 'Pas de réseau, ou Groq injoignable.' }
+  }
+  if (res.status === 401) return { ok: false, message: 'Clé refusée par Groq (invalide ou supprimée). Crée-en une nouvelle sur console.groq.com/keys.' }
+  if (!res.ok) return { ok: false, message: `Groq répond HTTP ${res.status}.` }
+  const j = await res.json().catch(() => ({}))
+  const models = (j.data || []).map((m) => m.id).sort()
+  const found = models.includes(model)
+  return {
+    ok: found,
+    keyOk: true,
+    models,
+    message: found
+      ? `Clé valide, modèle « ${model} » disponible.`
+      : `Clé valide, mais le modèle « ${model} » n'est pas proposé par Groq. Choisis un modèle qui lit les images (voir console.groq.com/docs/vision).`,
+  }
 }
