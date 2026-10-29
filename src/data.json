@@ -1,0 +1,646 @@
+{
+ "poste": {
+  "nom": "Parkside Performance PMPS 200 B",
+  "modes": [
+   {
+    "id": "mag",
+    "nom": "MIG/MAG classique",
+    "plage": "50–160 A",
+    "note": "Synergique : tu règles l'intensité, le poste propose la tension et la vitesse de fil, et affiche l'épaisseur conseillée."
+   },
+   {
+    "id": "pmig",
+    "nom": "MIG pulsé",
+    "plage": "30–160 A",
+    "note": "Moins de projections, plus de pénétration à intensité égale. Mauvais en dessous de 1 mm. C'est le mode de l'alu."
+   },
+   {
+    "id": "dpmig",
+    "nom": "MIG double pulsé",
+    "plage": "30–160 A",
+    "note": "Deux niveaux d'intensité qui alternent à basse fréquence (≈ 1–3 Hz) : contrôle de chaleur et aspect « écailles ». Réglages : pic, base en % du pic, rapport cyclique, fréquence."
+   },
+   {
+    "id": "mma",
+    "nom": "Électrode enrobée",
+    "plage": "20–140 A",
+    "note": "Hot start, arc force, anti-collage. 140 A max : Ø 3,2 mm est le plus gros diamètre réellement exploitable."
+   },
+   {
+    "id": "tig",
+    "nom": "TIG lift",
+    "plage": "20–200 A",
+    "note": "Courant continu uniquement (aucun réglage d'alternatif) : acier et inox, pas l'alu. Torche TIG à vanne non fournie."
+   }
+  ],
+  "fils": [
+   [
+    "Acier (Fe)",
+    "0,8 / 1,0 mm",
+    "Ar + 18–20 % CO₂ (M21) ou CO₂",
+    "Galet en V, gaine acier, tube 0,8 / 1,0"
+   ],
+   [
+    "Inox (CrNi)",
+    "0,8 / 1,0 mm",
+    "Ar + 2 % CO₂",
+    "Galet en V, gaine acier"
+   ],
+   [
+    "Alu AlMg / AlSi",
+    "1,0 / 1,2 mm",
+    "Argon pur (I1)",
+    "Galet en U, gaine téflon (montée d'usine), tube « 1.0 A »"
+   ],
+   [
+    "CuSi (soudobrasage)",
+    "0,8 mm",
+    "Argon pur",
+    "Galet en U conseillé"
+   ],
+   [
+    "Fourré sans gaz",
+    "0,8 / 0,9 / 1,0 mm",
+    "Aucun",
+    "Polarité inversée : torche au −, masse au +. Galet moleté idéal (non fourni)"
+   ]
+  ],
+  "gaz": "Débit selon la notice : Ø fil (mm) × 10 = L/min, soit 8 L/min en 0,8 et 10 L/min en 1,0. Courant d'air ou porosités : monte à 12–15 L/min, pas au-delà.",
+  "alimentation": "230 V, prise 16 A. Rallonge à éviter ; sinon déroulée entièrement, 2,5 mm² minimum.",
+  "manque": "Le facteur de marche n'est pas publié dans les extraits disponibles de la notice. Si le poste se coupe (« over heating »), attends environ 15 minutes poste allumé."
+ },
+ "changement": {
+  "versAlu": [
+   "Poste éteint et débranché.",
+   "Bobine acier retirée, rangée dans un sac fermé.",
+   "Gaine acier retirée, gaine téflon remise, coupée à ras du galet et sans bavure.",
+   "Galet en U, gorge 1,0 (ou 1,2) vers le fil.",
+   "Tube contact « 1.0 A » (légèrement plus large : l'alu se dilate).",
+   "Bouteille d'argon pur branchée, débit 10–12 L/min gâchette appuyée.",
+   "Pression des galets faible : le fil doit patiner si tu le pinces à la sortie de la torche.",
+   "Frein de bobine léger : la bobine s'arrête sans se dérouler.",
+   "Câble de torche le plus droit possible, sans boucle.",
+   "Programme synergique AlMg ou AlSi selon l'étiquette de ta bobine."
+  ],
+  "versAcier": [
+   "Poste éteint et débranché.",
+   "Bobine alu retirée, rangée dans un sac fermé avec un sachet déshydratant.",
+   "Gaine téflon retirée, gaine spirale acier remise (le fil acier abîme le téflon).",
+   "Galet en V, gorge 0,8 vers le fil.",
+   "Tube contact 0,8.",
+   "Bouteille Ar/CO₂ branchée, débit 8–12 L/min.",
+   "Pression des galets : le fil avance sans patiner et sans être écrasé.",
+   "Programme synergique Fe 80/20 (ou Fe CO₂ selon ta bouteille)."
+  ]
+ },
+ "reglages": {
+  "mag": {
+   "titre": "MAG acier · court-circuit",
+   "fil": "Fil acier Ø 0,8 · Ar/CO₂ · 8–12 L/min",
+   "geste": "Torche poussée 10–15°, terminale 10–12 mm constante. Angle : 45° entre les deux tôles.",
+   "lignes": [
+    {
+     "ep": "0,8–1 mm",
+     "a": "50–55",
+     "v": "15–16",
+     "fil": "3–4",
+     "note": "Bas de plage du poste (50 A mini) : points successifs, pas de cordon continu."
+    },
+    {
+     "ep": "1,5 mm",
+     "a": "55–75",
+     "v": "16–17",
+     "fil": "3–4,5",
+     "note": "Petits cordons de 2–3 cm, en alternant les côtés."
+    },
+    {
+     "ep": "2 mm",
+     "a": "70–100",
+     "v": "17–18,5",
+     "fil": "4–6",
+     "note": ""
+    },
+    {
+     "ep": "3 mm",
+     "a": "100–130",
+     "v": "18–19,5",
+     "fil": "6–8",
+     "note": "Épaisseur de référence pour apprendre."
+    },
+    {
+     "ep": "4 mm",
+     "a": "120–150",
+     "v": "19–21",
+     "fil": "6–8,5",
+     "note": ""
+    },
+    {
+     "ep": "5–6 mm",
+     "a": "140–160",
+     "v": "20–22",
+     "fil": "6,5–9",
+     "note": "Limite du poste. Bout à bout : chanfrein en V et plusieurs passes."
+    }
+   ]
+  },
+  "pmig": {
+   "titre": "MIG pulsé acier",
+   "fil": "Fil acier Ø 0,8 · Ar/CO₂ · 8–12 L/min",
+   "geste": "Comme en MAG, avec un arc plus long et plus doux. Pas en dessous de 1 mm.",
+   "lignes": [
+    {
+     "ep": "1,5 mm",
+     "a": "50–65",
+     "v": "auto",
+     "fil": "auto",
+     "note": "Moins bon qu'en MAG classique sur tôle fine."
+    },
+    {
+     "ep": "2 mm",
+     "a": "60–75",
+     "v": "auto",
+     "fil": "auto",
+     "note": ""
+    },
+    {
+     "ep": "3 mm",
+     "a": "75–95",
+     "v": "auto",
+     "fil": "≈ 6",
+     "note": "Mesuré sur ce poste : 80 A, 5,9 m/min, cordon d'angle propre."
+    },
+    {
+     "ep": "4 mm",
+     "a": "95–120",
+     "v": "auto",
+     "fil": "auto",
+     "note": ""
+    },
+    {
+     "ep": "5–6 mm",
+     "a": "120–160",
+     "v": "auto",
+     "fil": "auto",
+     "note": "Chanfrein au-delà de 5 mm en bout à bout."
+    }
+   ]
+  },
+  "alu": {
+   "titre": "MIG pulsé aluminium",
+   "fil": "Fil AlMg5 ou AlSi5 Ø 1,0 · argon pur · 10–15 L/min",
+   "geste": "Toujours poussé, 10–15°. Avance plus rapide qu'en acier, terminale 12–15 mm constante. Le cordon chauffe en avançant : accélère progressivement.",
+   "lignes": [
+    {
+     "ep": "2 mm",
+     "a": "60–75",
+     "v": "auto",
+     "fil": "auto",
+     "note": "Difficile : à aborder en dernier."
+    },
+    {
+     "ep": "3 mm",
+     "a": "85–100",
+     "v": "18–18,5",
+     "fil": "6,4–7,1",
+     "note": "Mesuré sur ce poste : 95 A, 7,1 m/min, longueur d'arc −1,5, pièce préchauffée."
+    },
+    {
+     "ep": "4 mm",
+     "a": "105–125",
+     "v": "auto",
+     "fil": "auto",
+     "note": "La plus facile pour débuter : plus tolérante au perçage."
+    },
+    {
+     "ep": "5–6 mm",
+     "a": "130–160",
+     "v": "auto",
+     "fil": "auto",
+     "note": "Préchauffage tiède obligatoire. Limite du poste."
+    }
+   ]
+  },
+  "dpmig": {
+   "titre": "Double pulsé aluminium",
+   "fil": "Comme le pulsé alu",
+   "geste": "Le cordon est cadencé par la fréquence : avance d'une écaille par battement.",
+   "params": [
+    [
+     "Pic",
+     "La valeur du pulsé simple, ou 5–10 A de moins",
+     "3 mm bout à bout : 85 A"
+    ],
+    [
+     "Base",
+     "≈ 70 % du pic",
+     "≈ 59–67 A"
+    ],
+    [
+     "Rapport cyclique",
+     "≈ 30 %",
+     ""
+    ],
+    [
+     "Fréquence",
+     "1,5–2 Hz",
+     "1,5 Hz : aspect proche du TIG, départ plus froid"
+    ],
+    [
+     "Longueur d'arc",
+     "−1 à −1,5",
+     ""
+    ]
+   ],
+   "alerte": "Sur l'alu épais en angle, le double pulsé augmente le risque de manque de fusion sur la tôle horizontale (ESAB). Au-delà de 5 mm, vérifie toujours par une casse."
+  },
+  "mma": {
+   "titre": "Électrode enrobée",
+   "fil": "Rutile E6013 pour débuter",
+   "geste": "Électrode inclinée de 60 à 80° dans le sens d'avance (tirée), arc court ≈ diamètre de l'âme.",
+   "lignes": [
+    {
+     "ep": "1,5–2 mm",
+     "a": "40–60",
+     "v": "Ø 1,6–2,0",
+     "fil": "",
+     "note": ""
+    },
+    {
+     "ep": "2–4 mm",
+     "a": "60–90",
+     "v": "Ø 2,5",
+     "fil": "",
+     "note": "Le diamètre de départ."
+    },
+    {
+     "ep": "4–8 mm",
+     "a": "90–130",
+     "v": "Ø 3,2",
+     "fil": "",
+     "note": "Le plus gros diamètre utile sur ce poste (140 A maximum)."
+    }
+   ]
+  },
+  "positions": "Hors position à plat : −5 à 10 % en corniche (PC), −10 à 15 % en montante (PF) et au plafond (PE). La descendante (PG) n'est pas pour débuter."
+ },
+ "diagnostic": [
+  {
+   "p": "tous",
+   "s": "Porosités, trous ronds",
+   "c": "Gaz absent ou soufflé, buse sale, pièce sale, terminale trop longue",
+   "r": "Bouteille ouverte ? Débit gâchette appuyée, abriter du vent, nettoyer la buse, meuler à blanc."
+  },
+  {
+   "p": "tous",
+   "s": "Le réglage d'hier ne marche plus",
+   "c": "Rallonge, autre bobine, bouteille presque vide, masse mal placée",
+   "r": "Masse sur métal nu près du joint, revenir au tableau, cordon d'essai sur chute."
+  },
+  {
+   "p": "tous",
+   "s": "Le poste se coupe",
+   "c": "Surchauffe (thermostat)",
+   "r": "Laisser refroidir 15 minutes environ, poste allumé, puis souder par séquences."
+  },
+  {
+   "p": "mag",
+   "s": "Le fil bute, la torche est repoussée",
+   "c": "Trop de fil pour la tension",
+   "r": "Longueur d'arc +0,5, ou −5 A."
+  },
+  {
+   "p": "mag",
+   "s": "Arc long, grosses gouttes, fil qui remonte",
+   "c": "Tension trop haute",
+   "r": "Longueur d'arc −0,5 à −1."
+  },
+  {
+   "p": "mag",
+   "s": "Cordon bombé, posé sur la tôle",
+   "c": "Trop froid ou trop lent",
+   "r": "+5 à 10 A ; avancer régulièrement ; viser le fond du joint."
+  },
+  {
+   "p": "mag",
+   "s": "Cordon plat, caniveaux, perçage",
+   "c": "Trop chaud ou trop lent",
+   "r": "−5 à 10 A ; avancer plus vite ; sur tôle fine, des points."
+  },
+  {
+   "p": "mag",
+   "s": "Beaucoup de projections",
+   "c": "Réglage désaccordé, terminale trop longue, masse ou pièce sale",
+   "r": "Inductance +1 à +2 ; terminale 10–12 mm ; meuler."
+  },
+  {
+   "p": "alu",
+   "s": "Le fil bourre au galet (« nid d'oiseau »)",
+   "c": "Pression des galets trop forte, gaine sale, tube trop serré, câble en boucle",
+   "r": "Desserrer les galets, souffler ou changer la gaine, tube « 1.0 A », câble droit."
+  },
+  {
+   "p": "alu",
+   "s": "Le fil se soude au tube (burnback)",
+   "c": "Terminale trop courte, longueur d'arc trop haute, fil qui hésite",
+   "r": "Terminale 12–15 mm ; longueur d'arc −0,5 ; changer le tube."
+  },
+  {
+   "p": "alu",
+   "s": "Le départ ne « mouille » pas, cordon froid au début",
+   "c": "L'alu évacue la chaleur",
+   "r": "Préchauffer tiède (≈ 50–100 °C), ou marquer un temps au départ avant d'avancer."
+  },
+  {
+   "p": "alu",
+   "s": "Perçage en fin de cordon",
+   "c": "La pièce a chauffé, la vitesse n'a pas suivi",
+   "r": "Accélérer progressivement, ou −5 A en 4T, ou double pulsé, ou cordon en deux morceaux."
+  },
+  {
+   "p": "alu",
+   "s": "Suie noire de part et d'autre du cordon",
+   "c": "Normal en partie (magnésium). Large et grasse : gaz insuffisant ou torche tirée",
+   "r": "Brosser après soudure. Si elle est épaisse : torche poussée, débit, buse propre."
+  },
+  {
+   "p": "alu",
+   "s": "Cordon gris terne, porosités",
+   "c": "Alumine ou graisse non retirée, fil oxydé, humidité",
+   "r": "Acétone puis brosse inox réservée à l'alu juste avant ; bobine stockée au sec."
+  },
+  {
+   "p": "alu",
+   "s": "Fissure au cratère de fin",
+   "c": "L'alu se rétracte au refroidissement",
+   "r": "Ne pas couper net : revenir légèrement en arrière, ou finir sur une languette ; meuler et refaire."
+  },
+  {
+   "p": "mma",
+   "s": "L'électrode colle à l'amorçage",
+   "c": "Intensité trop faible, geste trop lent",
+   "r": "+5 à 10 A ; hot start plus haut ; gratter comme une allumette."
+  },
+  {
+   "p": "mma",
+   "s": "Laitier piégé",
+   "c": "Intensité basse, angle trop couché, pas de piquage",
+   "r": "+5 A ; angle 60–80° ; piquer et brosser chaque passe."
+  },
+  {
+   "p": "mma",
+   "s": "Arc dévié d'un côté",
+   "c": "Soufflage magnétique",
+   "r": "Déplacer la masse, incliner l'électrode, souder vers une grosse pointe."
+  }
+ ],
+ "niveaux": [
+  {
+   "id": "n1",
+   "nom": "Acier MAG à plat",
+   "but": "Tenir un arc stable et poser un cordon régulier.",
+   "materiel": "Tôle acier S235 de 3 mm, fil 0,8, Ar/CO₂, 110 A environ en synergique.",
+   "ex": [
+    {
+     "id": "1",
+     "t": "Régler et écouter",
+     "o": "Trouver le grésillement régulier, « œufs au plat ».",
+     "c": "Faire 5 cordons de 5 cm en changeant uniquement la longueur d'arc de −2 à +2.",
+     "ok": "Tu reconnais à l'oreille le bon réglage sans regarder l'écran."
+    },
+    {
+     "id": "2",
+     "t": "Lignes droites de 15 cm",
+     "o": "Vitesse et terminale constantes.",
+     "c": "Tracer 6 lignes à la craie, 1 cordon par ligne, torche poussée.",
+     "ok": "Largeur constante ±1 mm sur 15 cm, deux fois de suite."
+    },
+    {
+     "id": "3",
+     "t": "Trop lent, trop vite",
+     "o": "Voir l'effet de la vitesse.",
+     "c": "3 cordons : lent, normal, rapide. Scie la chute en travers.",
+     "ok": "Tu sais dire sur la coupe lequel pénètre le mieux, et pourquoi."
+    },
+    {
+     "id": "4",
+     "t": "Poussé ou tiré",
+     "o": "Comparer la forme du cordon.",
+     "c": "2 cordons identiques, l'un poussé, l'autre tiré, même réglage.",
+     "ok": "Tu décris la différence de largeur et de bombé."
+    },
+    {
+     "id": "5",
+     "t": "Reprises",
+     "o": "Reprendre un cordon sans creux ni bosse.",
+     "c": "Cordon de 15 cm en 3 morceaux de 5 cm.",
+     "ok": "Les reprises ne se voient pas au toucher."
+    }
+   ]
+  },
+  {
+   "id": "n2",
+   "nom": "Acier : angle et bout à bout",
+   "but": "Assembler, pas seulement déposer.",
+   "materiel": "Plats de 3 mm et tôle de 1,5 et 2 mm, équerre magnétique, serre-joints.",
+   "ex": [
+    {
+     "id": "6",
+     "t": "Pointer un T d'équerre",
+     "o": "Pointer sans déformer.",
+     "c": "2 points aux extrémités, contrôle de l'équerre, puis 1 au milieu.",
+     "ok": "Équerre à moins de 1° après pointage."
+    },
+    {
+     "id": "7",
+     "t": "Angle intérieur en PB",
+     "o": "Gorge égale sur les deux tôles.",
+     "c": "Cordon de 15 cm, torche à 45°, visée au fond de l'angle.",
+     "ok": "Côtés égaux à ±1 mm et casse au marteau : rupture dans la tôle, pas dans la soudure."
+    },
+    {
+     "id": "8",
+     "t": "Bout à bout 2 mm",
+     "o": "Pénétrer jusqu'à l'envers.",
+     "c": "Écart de 1 mm, pointes tous les 5 cm.",
+     "ok": "Envers régulier, sans perçage ni manque."
+    },
+    {
+     "id": "9",
+     "t": "Tôle de 1,5 mm par points",
+     "o": "Gérer la chaleur sur tôle fine.",
+     "c": "Points successifs en se chevauchant, en alternant les zones.",
+     "ok": "Aucun trou, déformation < 2 mm sur 20 cm."
+    }
+   ]
+  },
+  {
+   "id": "n3",
+   "nom": "Acier : positions et pulsé",
+   "but": "Sortir du plat, découvrir le pulsé.",
+   "materiel": "Plats de 3 et 4 mm.",
+   "ex": [
+    {
+     "id": "10",
+     "t": "Corniche (PC)",
+     "o": "Le bain ne doit pas couler.",
+     "c": "−5 à 10 % d'intensité, torche légèrement relevée.",
+     "ok": "Cordon sans goutte ni caniveau supérieur."
+    },
+    {
+     "id": "11",
+     "t": "Montante (PF)",
+     "o": "Monter en contrôlant le bain.",
+     "c": "−10 à 15 %, petit balancement, temps de pause sur les bords.",
+     "ok": "Écailles régulières « en sapin » sur 10 cm."
+    },
+    {
+     "id": "12",
+     "t": "Comparer MAG et pulsé",
+     "o": "Comprendre ce que fait le pulsé.",
+     "c": "Deux cordons à 80 A sur 3 mm : MAG puis pulsé. Scie les deux.",
+     "ok": "Tu montres la différence de pénétration et de projections."
+    },
+    {
+     "id": "13",
+     "t": "Angle en pulsé",
+     "o": "Régler le pulsé avant de l'utiliser sur l'alu.",
+     "c": "Angle PB 3 mm en pulsé, ≈ 80 A.",
+     "ok": "Cordon régulier avec presque aucune projection."
+    }
+   ]
+  },
+  {
+   "id": "n4",
+   "nom": "Aluminium MIG pulsé",
+   "but": "Le but final. Seulement après avoir validé les niveaux 1 et 2.",
+   "materiel": "Tôle alu 4 puis 3 mm (5754 ou 6060/6082), fil AlMg5 1,0, argon. Configuration alu (voir l'onglet Poste).",
+   "ex": [
+    {
+     "id": "14",
+     "t": "Passer la configuration en alu",
+     "o": "Faire dévider le fil alu sans bourrage.",
+     "c": "Suivre la check-list « vers l'alu ». Dévider 1 m de fil à vide.",
+     "ok": "Le fil sort droit et régulier, trois fois de suite."
+    },
+    {
+     "id": "15",
+     "t": "Préparer l'alu",
+     "o": "Retirer graisse et alumine.",
+     "c": "Acétone, chiffon propre, brosse inox réservée à l'alu, juste avant de souder.",
+     "ok": "Cordon d'essai brillant, sans gris terne."
+    },
+    {
+     "id": "16",
+     "t": "Lignes sur 4 mm",
+     "o": "Trouver la vitesse alu.",
+     "c": "≈ 115 A pulsé, torche poussée, cordons de 10 cm.",
+     "ok": "Largeur constante et aucun départ froid, deux fois de suite."
+    },
+    {
+     "id": "17",
+     "t": "Lignes sur 3 mm",
+     "o": "Gérer l'échauffement.",
+     "c": "≈ 90–95 A, accélère quand le bain s'élargit.",
+     "ok": "Pas de perçage en fin de cordon."
+    },
+    {
+     "id": "18",
+     "t": "Angle PB 3 mm",
+     "o": "Fusion des deux tôles.",
+     "c": "Pointer, puis cordon de 10 cm.",
+     "ok": "Casse au marteau : la soudure tient, pas de collage visible."
+    },
+    {
+     "id": "19",
+     "t": "Bout à bout 3 mm",
+     "o": "Pénétration complète.",
+     "c": "Écart 0,5–1 mm, préchauffage tiède.",
+     "ok": "Envers régulier ; pliage à 90° sans fissure."
+    }
+   ]
+  },
+  {
+   "id": "n5",
+   "nom": "Alu : double pulsé et tôle fine",
+   "but": "Affiner l'aspect et descendre en épaisseur.",
+   "materiel": "Alu 3 puis 2 mm.",
+   "ex": [
+    {
+     "id": "20",
+     "t": "Premier double pulsé",
+     "o": "Comprendre la fréquence.",
+     "c": "3 mm, pic 85 A, base 70 %, cyclique 30 %, 1,5 puis 2 Hz.",
+     "ok": "Écailles régulières, une par battement."
+    },
+    {
+     "id": "21",
+     "t": "Alu 2 mm",
+     "o": "Souder sans percer.",
+     "c": "Pulsé ou double pulsé ≈ 65 A, cordons courts.",
+     "ok": "10 cm sans trou, deux fois de suite."
+    }
+   ]
+  }
+ ],
+ "securite": [
+  [
+   "Yeux",
+   "Masque auto-obscurcissant réglé selon le tableau ci-dessous et celui du fabricant. Ébloui ou image persistante : monte d'un cran. Lunettes de sécurité sous le masque pour meuler et brosser."
+  ],
+  [
+   "Fumées",
+   "Aspiration à la source ou porte ouverte, tête hors du panache. L'alu sous argon produit plus d'ozone : ventile davantage."
+  ],
+  [
+   "Pièces revêtues",
+   "Jamais de galvanisé, de peint ou de gras sans décapage à la meuleuse sur 2–3 cm. Jamais un récipient ayant contenu un produit inflammable."
+  ],
+  [
+   "Incendie",
+   "Rien de combustible à moins de 10 m, extincteur à portée, ronde 30 minutes après la dernière soudure."
+  ],
+  [
+   "Peau",
+   "Coton épais ou cuir, col fermé, gants secs. Pas de synthétique."
+  ],
+  [
+   "Bouteille",
+   "Debout et attachée, robinet fermé en fin de séance. L'argon chasse l'air sans odeur : local ventilé."
+  ]
+ ],
+ "teintes": [
+  [
+   "40–80 A",
+   "10",
+   "—"
+  ],
+  [
+   "80–125 A",
+   "11",
+   "10–11"
+  ],
+  [
+   "125–175 A",
+   "12",
+   "11–12"
+  ]
+ ],
+ "avant": [
+  "Masque : filtre qui fonce, teinte réglée",
+  "Coton ou cuir, gants secs, lunettes pour meuler",
+  "Zone dégagée, extincteur à portée",
+  "Aspiration ou ventilation",
+  "Pièce décapée à blanc",
+  "Masse sur métal nu près du joint",
+  "Gaz ouvert, débit vérifié gâchette appuyée",
+  "Bonne configuration (galet, gaine, tube, programme)",
+  "Cordon d'essai sur chute"
+ ],
+ "apres": [
+  "Poste éteint, robinet de bouteille fermé",
+  "Pièces chaudes marquées « CHAUD »",
+  "Ronde incendie",
+  "Bobine alu en sac fermé",
+  "Réglages validés notés dans le carnet"
+ ]
+}

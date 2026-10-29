@@ -1,0 +1,16 @@
+{
+  "name": "Atelier PMPS 200",
+  "short_name": "Atelier PMPS",
+  "description": "Réglages, diagnostic, parcours et carnet de soudure pour le Parkside PMPS 200 B",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#15191D",
+  "theme_color": "#15191D",
+  "lang": "fr",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
